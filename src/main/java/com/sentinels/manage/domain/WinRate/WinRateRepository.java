@@ -1,4 +1,5 @@
 package com.sentinels.manage.domain.WinRate;
 
-public interface WinRateRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+public interface WinRateRepository extends JpaRepository<WinRate,Long>{
 }
