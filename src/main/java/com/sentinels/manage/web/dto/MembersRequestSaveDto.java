@@ -10,7 +10,7 @@ import java.time.LocalDate;
 
 @Getter
 @NoArgsConstructor
-public class MembersRequestDto {
+public class MembersRequestSaveDto {
     private String name;
     private String tier;
     private int age;
@@ -18,7 +18,7 @@ public class MembersRequestDto {
     private LocalDate visitDate;
 
     @Builder
-    public MembersRequestDto(String name,String tier,int age,String etc,LocalDate visitDate){
+    public MembersRequestSaveDto(String name, String tier, int age, String etc, LocalDate visitDate){
         this.name = name;
         this.tier = tier;
         this.age = age;
@@ -35,5 +35,4 @@ public class MembersRequestDto {
                 .visitDate(visitDate)
                 .build();
     }
-
 }
