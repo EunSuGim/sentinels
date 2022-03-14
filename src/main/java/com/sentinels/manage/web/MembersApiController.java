@@ -17,6 +17,7 @@ public class MembersApiController {
 
     @PostMapping("/api/v1/members")
     public Long save(@RequestBody MembersRequestDto requestDto){
+
         return membersService.save(requestDto);
     }
 

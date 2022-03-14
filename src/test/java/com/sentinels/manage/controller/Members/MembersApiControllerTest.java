@@ -223,6 +223,9 @@ public class MembersApiControllerTest {
 
         ResponseEntity<Members> responseEntity = testRestTemplate.getForEntity(url, Members.class);
 
+        System.out.println("방문시간~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println(responseEntity.getBody().getVisitDate());
+
         assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(responseEntity.getBody().getTier()).isEqualTo(tier);
 
