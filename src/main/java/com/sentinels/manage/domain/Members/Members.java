@@ -1,5 +1,6 @@
 package com.sentinels.manage.domain.Members;
 
+import com.sentinels.manage.web.dto.MembersRequestUpdateDto;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,7 +8,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.Objects;
 
 @Getter
@@ -41,6 +41,14 @@ public class Members {
         if(!Objects.isNull(etc)) this.etc = etc;
         if(!Objects.isNull(age)) this.age = age;
         if(!Objects.isNull(visitDate)) this.visitDate = visitDate;
+    }
+
+    public void update(MembersRequestUpdateDto requestUpdateDto){
+        this.name = requestUpdateDto.getName();
+        this.tier = requestUpdateDto.getTier();
+        this.age = requestUpdateDto.getAge();
+        this.etc = requestUpdateDto.getEtc();
+        this.visitDate = requestUpdateDto.getVisitDate();
     }
 
 }
