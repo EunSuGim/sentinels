@@ -40,3 +40,4 @@ public class MembersApiController {
         return membersService.update(id, requestUpdateDto);
     }
 }
+
