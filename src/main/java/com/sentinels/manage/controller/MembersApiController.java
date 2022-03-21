@@ -1,4 +1,4 @@
-package com.sentinels.manage.web;
+package com.sentinels.manage.controller;
 
 import com.sentinels.manage.domain.Members.Members;
 import com.sentinels.manage.service.MembersService;
