@@ -5,6 +5,7 @@ import com.sentinels.manage.service.MembersService;
 import com.sentinels.manage.web.dto.MembersRequestDto;
 import com.sentinels.manage.web.dto.MembersRequestUpdateDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,8 +16,18 @@ public class MembersApiController {
 
     private final MembersService membersService;
 
-    @PostMapping("/api/v1/members")
-    public Long save(@RequestBody MembersRequestDto requestDto){
+    @PostMapping(value = "/api/v1/members", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Long saveJson(@RequestBody MembersRequestDto requestDto){
+
+        System.out.println("aaaaaaaaaaaaaa"+requestDto.getName());
+
+        return membersService.save(requestDto);
+    }
+
+    @PostMapping(value = "/api/v1/members", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    public Long saveForm(MembersRequestDto requestDto){
+
+        System.out.println("aaaaaaaaaaaaaa"+requestDto.getName());
 
         return membersService.save(requestDto);
     }

@@ -32,20 +32,20 @@ public class MembersRepositoryTest {
         String tier;
         String etc;
         int age;
-        LocalDate visitdate;
+        LocalDate startDate;
 
         name = "정자셉니다";
         tier = "P";
         etc = " ";
         age = 29;
-        visitdate = LocalDate.now();
+        startDate = LocalDate.now();
 
         membersRepository.save(Members.builder()
                         .name(name)
                         .tier(tier)
                         .etc(etc)
                         .age(age)
-                        .visitDate(visitdate)
+                        .startDate(startDate)
                         .build());
 
         List<Members> membersList = membersRepository.findAll();
@@ -53,7 +53,7 @@ public class MembersRepositoryTest {
         Members members = membersList.get(0);
 
         assertThat(members.getName()).isEqualTo(name);
-        assertThat(members.getVisitDate()).isEqualTo(visitdate);
+        assertThat(members.getStartDate()).isEqualTo(startDate);
 
     }
 

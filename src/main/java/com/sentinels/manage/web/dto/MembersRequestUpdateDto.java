@@ -14,14 +14,16 @@ public class MembersRequestUpdateDto {
     private String tier;
     private int age;
     private String etc;
-    private LocalDate visitDate;
+    private String gender;
+    private LocalDate startDate;
 
     @Builder
-    public MembersRequestUpdateDto(String name, String tier, int age, String etc, LocalDate visitDate){
+    public MembersRequestUpdateDto(String name, String tier, int age, String etc, String gender, LocalDate startDate){
         this.name = name;
         this.tier = tier;
         this.age = age;
         this.etc = etc;
-        this.visitDate = visitDate;
+        this.gender = gender;
+        this.startDate = startDate;
     }
 }

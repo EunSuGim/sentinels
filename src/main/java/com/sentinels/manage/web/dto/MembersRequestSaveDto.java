@@ -15,15 +15,17 @@ public class MembersRequestSaveDto {
     private String tier;
     private int age;
     private String etc;
-    private LocalDate visitDate;
+    private String gender;
+    private LocalDate startDate;
 
     @Builder
-    public MembersRequestSaveDto(String name, String tier, int age, String etc, LocalDate visitDate){
+    public MembersRequestSaveDto(String name, String tier, int age, String etc, String gender, LocalDate startDate){
         this.name = name;
         this.tier = tier;
         this.age = age;
         this.etc = etc;
-        this.visitDate = visitDate;
+        this.gender =gender;
+        this.startDate = startDate;
     }
 
     public Members toEntity(){
@@ -32,7 +34,8 @@ public class MembersRequestSaveDto {
                 .tier(tier)
                 .age(age)
                 .etc(etc)
-                .visitDate(visitDate)
+                .gender(gender)
+                .startDate(startDate)
                 .build();
     }
 }

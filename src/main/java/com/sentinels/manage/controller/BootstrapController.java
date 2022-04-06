@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class BootstrapController {
-    @RequestMapping("/dashboard")
+    @RequestMapping("/api/v1/members")
     public String dashboard(){
         return "index";
     }

@@ -48,13 +48,13 @@ public class MembersApiControllerTest {
         String tier;
         String etc;
         int age;
-        LocalDate visitdate;
+        LocalDate startDate;
 
         name = "정자셉니다";
         tier = "P";
         etc = " ";
         age = 29;
-        visitdate = LocalDate.now();
+        startDate = LocalDate.now();
 
         MembersRequestDto requestDto =
                 MembersRequestDto.builder()
@@ -62,7 +62,7 @@ public class MembersApiControllerTest {
                         .tier(tier)
                         .age(age)
                         .etc(etc)
-                        .visitDate(visitdate)
+                        .startDate(startDate)
                         .build();
 
         String url = "http://localhost:" + port + "/api/v1/members";
@@ -83,20 +83,20 @@ public class MembersApiControllerTest {
         String tier;
         String etc;
         int age;
-        LocalDate visitdate;
+        LocalDate startDate;
 
         name = "정자셉니다";
         tier = "P";
         etc = " ";
         age = 29;
-        visitdate = LocalDate.now();
+        startDate = LocalDate.now();
 
         Long removeId = membersRepository.save(Members.builder()
                 .name(name)
                 .tier(tier)
                 .etc(etc)
                 .age(age)
-                .visitDate(visitdate)
+                .startDate(startDate)
                 .build()).getId();
 
         String url = "http://localhost:" + port + "/api/v1/members/" + removeId;
@@ -116,13 +116,13 @@ public class MembersApiControllerTest {
         String tier;
         String etc;
         int age;
-        LocalDate visitdate;
+        LocalDate startDate;
 
         name = "정자셉니다";
         tier = "P";
         etc = " ";
         age = 29;
-        visitdate = LocalDate.now();
+        startDate = LocalDate.now();
 
         Members saveMembers =
                 membersRepository.save(Members.builder()
@@ -130,7 +130,7 @@ public class MembersApiControllerTest {
                                 .tier(tier)
                                 .etc(etc)
                                 .age(age)
-                                .visitDate(visitdate)
+                                .startDate(startDate)
                         .build());
 
         Long updateId = saveMembers.getId();
@@ -143,7 +143,7 @@ public class MembersApiControllerTest {
                         .tier(tier)
                         .age(age)
                         .etc(etc)
-                        .visitDate(visitdate)
+                        .startDate(startDate)
                         .build();
 
         String url = "http://localhost:" + port + "/api/v1/members/" + updateId;
@@ -164,13 +164,13 @@ public class MembersApiControllerTest {
         String tier;
         String etc;
         int age;
-        LocalDate visitdate;
+        LocalDate startDate;
 
         name = "정자셉니다";
         tier = "P";
         etc = " ";
         age = 29;
-        visitdate = LocalDate.now();
+        startDate = LocalDate.now();
 
 
         membersRepository.save(Members.builder()
@@ -178,7 +178,7 @@ public class MembersApiControllerTest {
                 .tier(tier)
                 .etc(etc)
                 .age(age)
-                .visitDate(visitdate)
+                .startDate(startDate)
                 .build());
 
 
@@ -201,20 +201,20 @@ public class MembersApiControllerTest {
         String tier;
         String etc;
         int age;
-        LocalDate visitdate;
+        LocalDate startDate;
 
         name = "정자셉니다";
         tier = "P";
         etc = " ";
         age = 29;
-        visitdate = LocalDate.now();
+        startDate = LocalDate.now();
 
         Members members = membersRepository.save(Members.builder()
                 .name(name)
                 .tier(tier)
                 .etc(etc)
                 .age(age)
-                .visitDate(visitdate)
+                .startDate(startDate)
                 .build());
 
         Long givenDataId = members.getId();
@@ -224,7 +224,7 @@ public class MembersApiControllerTest {
         ResponseEntity<Members> responseEntity = testRestTemplate.getForEntity(url, Members.class);
 
         System.out.println("방문시간~~~~~~~~~~~~~~~~~~~~~~");
-        System.out.println(responseEntity.getBody().getVisitDate());
+        System.out.println(responseEntity.getBody().getStartDate());
 
         assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(responseEntity.getBody().getTier()).isEqualTo(tier);
