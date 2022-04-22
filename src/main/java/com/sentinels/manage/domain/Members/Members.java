@@ -1,5 +1,6 @@
 package com.sentinels.manage.domain.Members;
 
+import com.sentinels.manage.domain.BaseTimeEntity;
 import com.sentinels.manage.web.dto.MembersRequestUpdateDto;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,7 +14,7 @@ import java.util.Objects;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Members {
+public class Members extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
